@@ -1,0 +1,384 @@
+@font-face {
+  font-family: 'Industry Black';
+  src: url('Industry Black.eot'); /* IE9 Compat Modes */
+  src: url('Industry Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Black.woff') format('woff'), /* Modern Browsers */
+       url('Industry Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Black.svg#367983e52b9609cbc5225735e993082c') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Black';
+  src: url('Industry Black Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Black Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Black Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Black Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Black Italic.svg#e8c53a3b65d49557a4152a70cc377337') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Black';
+  src: url('Industry Black Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Black Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Black Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Black Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Black Italic.svg#e8c53a3b65d49557a4152a70cc377337') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Black';
+  src: url('Industry Black.eot'); /* IE9 Compat Modes */
+  src: url('Industry Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Black.woff') format('woff'), /* Modern Browsers */
+       url('Industry Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Black.svg#367983e52b9609cbc5225735e993082c') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry';
+  src: url('Industry Bold.eot'); /* IE9 Compat Modes */
+  src: url('Industry Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Bold.woff') format('woff'), /* Modern Browsers */
+       url('Industry Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Bold.svg#5ab3e9e340e8dca440b8f3e3792292da') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Industry';
+  src: url('Industry Bold Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Bold Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Bold Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Bold Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Bold Italic.svg#6949df70ac7436fe1c2e3d5e8ee12897') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Industry';
+  src: url('Industry Bold Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Bold Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Bold Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Bold Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Bold Italic.svg#6949df70ac7436fe1c2e3d5e8ee12897') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Industry';
+  src: url('Industry Bold.eot'); /* IE9 Compat Modes */
+  src: url('Industry Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Bold.woff') format('woff'), /* Modern Browsers */
+       url('Industry Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Bold.svg#5ab3e9e340e8dca440b8f3e3792292da') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'Industry Book';
+  src: url('Industry Book.eot'); /* IE9 Compat Modes */
+  src: url('Industry Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Book.woff') format('woff'), /* Modern Browsers */
+       url('Industry Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Book.svg#c7d0e2ba3b85111febe4fc506b4c9654') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Book';
+  src: url('Industry Book Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Book Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Book Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Book Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Book Italic.svg#d1b5209ef917be350cbc62e08da3fded') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Book';
+  src: url('Industry Book Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Book Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Book Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Book Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Book Italic.svg#d1b5209ef917be350cbc62e08da3fded') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Book';
+  src: url('Industry Book.eot'); /* IE9 Compat Modes */
+  src: url('Industry Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Book.woff') format('woff'), /* Modern Browsers */
+       url('Industry Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Book.svg#c7d0e2ba3b85111febe4fc506b4c9654') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Demi';
+  src: url('Industry Demi.eot'); /* IE9 Compat Modes */
+  src: url('Industry Demi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Demi.woff') format('woff'), /* Modern Browsers */
+       url('Industry Demi.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Demi.svg#d059cdcebab298b90e97a681ea91b266') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Demi';
+  src: url('Industry Demi Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Demi Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Demi Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Demi Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Demi Italic.svg#e6bc71ed99f87ad543b83ed1818d17a6') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Demi';
+  src: url('Industry Demi Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Demi Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Demi Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Demi Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Demi Italic.svg#e6bc71ed99f87ad543b83ed1818d17a6') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Demi';
+  src: url('Industry Demi.eot'); /* IE9 Compat Modes */
+  src: url('Industry Demi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Demi.woff') format('woff'), /* Modern Browsers */
+       url('Industry Demi.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Demi.svg#d059cdcebab298b90e97a681ea91b266') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Light';
+  src: url('Industry Light.eot'); /* IE9 Compat Modes */
+  src: url('Industry Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Light.woff') format('woff'), /* Modern Browsers */
+       url('Industry Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Light.svg#bd20dd7817c15453d8ce3cbc1c0815a9') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Light';
+  src: url('Industry Light Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Light Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Light Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Light Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Light Italic.svg#174ac24e5a902186995f6ac44ef39892') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Light';
+  src: url('Industry Light Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Light Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Light Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Light Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Light Italic.svg#174ac24e5a902186995f6ac44ef39892') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Light';
+  src: url('Industry Light.eot'); /* IE9 Compat Modes */
+  src: url('Industry Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Light.woff') format('woff'), /* Modern Browsers */
+       url('Industry Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Light.svg#bd20dd7817c15453d8ce3cbc1c0815a9') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Medium';
+  src: url('Industry Medium.eot'); /* IE9 Compat Modes */
+  src: url('Industry Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Medium.woff') format('woff'), /* Modern Browsers */
+       url('Industry Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Medium.svg#beb3f8de13fbfc29461795a9aad784ba') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Medium';
+  src: url('Industry Medium Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Medium Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Medium Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Medium Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Medium Italic.svg#7d11b32051cf299518ee990882d960ed') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Medium';
+  src: url('Industry Medium Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Medium Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Medium Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Medium Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Medium Italic.svg#7d11b32051cf299518ee990882d960ed') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Medium';
+  src: url('Industry Medium.eot'); /* IE9 Compat Modes */
+  src: url('Industry Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Medium.woff') format('woff'), /* Modern Browsers */
+       url('Industry Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Medium.svg#beb3f8de13fbfc29461795a9aad784ba') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Thin';
+  src: url('Industry Thin.eot'); /* IE9 Compat Modes */
+  src: url('Industry Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Thin.woff') format('woff'), /* Modern Browsers */
+       url('Industry Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Thin.svg#7c3a361d084c6f179417b662b7b6bd7e') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Thin';
+  src: url('Industry Thin Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Thin Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Thin Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Thin Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Thin Italic.svg#c86486dbadc7b404ad2f031bed2761de') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Thin';
+  src: url('Industry Thin Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Thin Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Thin Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Thin Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Thin Italic.svg#c86486dbadc7b404ad2f031bed2761de') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Thin';
+  src: url('Industry Thin.eot'); /* IE9 Compat Modes */
+  src: url('Industry Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Thin.woff') format('woff'), /* Modern Browsers */
+       url('Industry Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Thin.svg#7c3a361d084c6f179417b662b7b6bd7e') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'Industry Ultra';
+  src: url('Industry Ultra.eot'); /* IE9 Compat Modes */
+  src: url('Industry Ultra.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Ultra.woff') format('woff'), /* Modern Browsers */
+       url('Industry Ultra.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Ultra.svg#19b35cd0a264edc0a4426fd02bb4b668') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Ultra';
+  src: url('Industry Ultra Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Ultra Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Ultra Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Ultra Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Ultra Italic.svg#f3cfecf361ddf8df2bed59e871624f72') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Ultra';
+  src: url('Industry Ultra Italic.eot'); /* IE9 Compat Modes */
+  src: url('Industry Ultra Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Ultra Italic.woff') format('woff'), /* Modern Browsers */
+       url('Industry Ultra Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Ultra Italic.svg#f3cfecf361ddf8df2bed59e871624f72') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Industry Ultra';
+  src: url('Industry Ultra.eot'); /* IE9 Compat Modes */
+  src: url('Industry Ultra.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Industry Ultra.woff') format('woff'), /* Modern Browsers */
+       url('Industry Ultra.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Industry Ultra.svg#19b35cd0a264edc0a4426fd02bb4b668') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

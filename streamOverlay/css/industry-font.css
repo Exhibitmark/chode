@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "DIN";
+    font-weight: 600;
+    src:url("./fonts/dinpro-bold.woff") format("woff")
+}
+/*@font-face {
+    font-family: "DIN";
+    font-style: normal;
+    font-weight: 900;
+    src:url("./fonts/dinpro-black-webfont.woff") format("woff")
+} */
+
+@font-face {
+    font-family: "Industry";
+    font-style: italic;
+    font-weight: 700;
+    src:url("./fonts/Industry Bold Italic.woff") format("woff")
+}
+@font-face {
+    font-family: "Industry";
+    font-style: normal;
+    font-weight: 700;
+    src:url("./fonts/Industry Bold.woff") format("woff")
+}
+
+@font-face {
+    font-family: "Industry";
+    font-style: italic;
+    font-weight: 600;
+    src:url("./fonts/Industry Demi Italic.woff") format("woff")
+}
+@font-face {
+    font-family: "Industry";
+    font-style: normal;
+    font-weight: 600;
+    src:url("./fonts/Industry Demi.woff") format("woff")
+}
+
+@font-face {
+    font-family: "DIN";
+    font-style: normal;
+    font-weight: 500;
+    src:url("./fonts/dinpro-medium-webfont.woff") format("woff")
+}
+
+@font-face {
+    font-family: "DIN";
+    font-style: normal;
+    font-weight: 400;
+    src:url("./fonts/dinpro-regular-webfont.woff") format("woff")
+}

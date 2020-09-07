@@ -1,0 +1,16 @@
+{
+  "name": "Overlay",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . Overlay --overwrite --ignore=^/extendAPI.exe --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.FileDescription=CE --version-string.ProductName=\"Stream Overlay\""
+  },
+  "dependencies": {
+    "request": "*"
+  },
+  "devDependencies": {
+    "request": "*",
+    "electron-packager": "^13.1.1",
+    "electron": "^4.0.3"
+  }
+}

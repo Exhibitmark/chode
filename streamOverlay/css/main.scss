@@ -1,0 +1,576 @@
+$colors: (
+    darkBG:#202231,
+    medGrey:#242739,
+    lightGrey:#313341,
+    offState:#555666,
+    whiteText:#E5E5E5,
+    primaryBlue:#4741EB,
+    redClose:#FF4864,
+    yellowMinimize:#FFBB00,
+    statusGreen:#51cf66
+);
+
+//Functions
+@function color($color-name) {
+	@return map-get($colors, $color-name);
+}
+//Modifiers / Helpers
+@mixin pull-right{
+	float: right !important;
+} 
+
+@mixin pull-left{
+	float: left !important;
+}  
+
+@mixin drag{
+  -webkit-app-region: drag;
+}
+
+@mixin noDrag{
+  -webkit-app-region: no-drag;
+}
+
+//Mix-ins
+@mixin row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@mixin text($color, $fontSize, $weight, $kern) {
+	color: color($color);
+	font-size: $fontSize;
+	font-weight: $weight;
+	letter-spacing: $kern;
+}
+
+@mixin font-style($weight, $size, $kerning, $color) {
+  font-family: 'Industry', sans-serif;
+  font-size: $size;
+  font-weight: weight($weight);
+  letter-spacing: $kerning;
+  color: color($color);
+}
+
+@mixin button($color, $width, $height, $fontSize) {
+	background-color: color($color);
+	width: $width;
+	height: $height;
+  font-size: $fontSize;
+	font-weight:800;
+  letter-spacing:2px;
+  border-color: transparent;
+	justify-content: center;
+  text-align: center;
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+}
+
+html, body {
+  font-family: 'Industry', sans-serif;
+}
+
+html {
+  @include drag();
+  overflow: visible;
+  box-sizing: border-box;
+	
+}
+
+body {
+  @include noDrag();
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  overflow: visible;
+  width:100%;
+  height:1080px;
+}
+
+.bodyNoMargin{
+  margin:0px;
+}
+
+.drag{
+  -webkit-app-region: drag;
+}
+
+.noDrag{
+  -webkit-app-region: no-drag;
+}
+
+.middleRegion{
+  height:calc(100% - 340px);
+  width:100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+.canvas{
+  height:250px;
+}
+
+.transition{
+  transition: all .65s cubic-bezier(.2,0,0,1);
+}
+
+.settings{
+  height:100%;
+  width:100%;
+  background-color:rgba(51, 51, 51,50%)
+}
+
+.newGoal{
+  color:#EEEEEE;
+  overflow: hidden;
+  width:1200px;
+  height:300px !important;
+  transform: translateX(-1550px) skewX(-20deg);
+  text-transform:uppercase;
+  transition: all .65s cubic-bezier(.2,0,0,1);
+}
+
+.goalStat{
+  @include noDrag();
+  transform: translateY(300px);
+  transition: all .8s ease-out;
+  transition-delay: 1s;
+}
+
+.goalStatTitle{
+  @include noDrag();
+  @include text(yellowMinimize,1rem, 500, 2px);
+  text-transform:uppercase;
+  font-style:italic;
+}
+.goalStats{
+  @include noDrag();
+  @include text(whiteText,2rem, 500, 1px);
+  text-transform:uppercase;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.goalAlertText{
+  @include noDrag();
+  @include text(yellowMinimize, 3.7rem, 700, 1px);
+  text-transform:uppercase;
+  transform: translateY(0px);
+  transition: all .35s cubic-bezier(.75,-0.5,0,1.75);
+}
+
+.goalType{
+  @include noDrag();
+  @include text(whiteText, 2rem, 400, 3px);
+  text-transform:uppercase;
+  font-style: italic;
+  transition: all .35s cubic-bezier(.75,-0.5,0,1.75);
+}
+
+.goalTeam{
+  @include text(whiteText, 2.2rem, 600, 1px);
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  transition: all .35s cubic-bezier(.75,-0.5,0,1.75);
+}
+.half{
+  @include noDrag();
+  @include text(whiteText, 1.2rem, 600, 0px);
+  font-family: industry, sans-serif; 
+  text-transform:uppercase;
+  font-style:italic; 
+}
+.time{
+  @include noDrag();
+  @include text(whiteText, 1.6rem, 500, 0px);
+  font-family: industry, sans-serif; 
+  text-transform:uppercase;
+  font-style:italic;
+}
+
+.nameplate{
+  height:auto !important;
+  width:350px;
+  background-size:99%;
+  background-blend-mode: multiply;
+  background-repeat:no-repeat;
+  overflow:hidden;
+}
+
+//Text Styles
+.title{
+	@include text(whiteText, .65rem, 400, 1px);
+	margin: 0px 3px 0px 0px;
+}
+
+.score{
+  @include noDrag();
+  @include text(whiteText, 2.5rem, 700, 1px);
+  font-family: industry, sans-serif; 
+  font-style: italic;
+  cursor: pointer;
+}
+
+.statDisplayCont{
+  height:calc(100% - 170px) !important;
+}
+
+.statSpacer{
+  margin-bottom:0px
+}
+.statLabel{
+  margin-bottom:6px
+}
+
+ul{
+  margin-bottom:0px;
+  padding:0px;
+}
+
+.ulSpacer{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-bottom:15px;
+  
+}
+.tiny{
+  @include text(whiteText, .7rem, 400, 1px);
+  font-style: italic;
+}
+.gameNumber{
+  @include noDrag();
+  @include text(whiteText, 1rem, 500, 1px);
+  font-family: industry, sans-serif; 
+  font-style: italic;
+  cursor: pointer;
+}
+.statNumber{
+  @include noDrag();
+  @include text(whiteText, 1.3rem, 700, 1px);
+  font-style: italic;
+  cursor: pointer;
+}
+
+.teamText{
+  @include noDrag();
+  @include text(whiteText, 1.6rem, 700, 0px);
+  font-family: industry, sans-serif; 
+  text-transform:uppercase;
+}
+
+.titleIcon{
+  @include noDrag();
+  @include text(whiteText, .6rem, 600, 1px);
+  cursor: pointer;
+	margin: 0px 2px 2px 10px;
+}
+
+.subText {
+  @include text(whiteText, .6rem, 400, 2px);
+  margin-top:2px;
+}
+
+.menuText {
+  @include text(whiteText, .7rem, 400, 2px);
+}
+
+.linkText {
+  @include noDrag();
+  @include text(primaryBlue, .6rem, 600, 1px);
+  cursor: pointer;
+}
+
+.disabledLinkText {
+  @include noDrag();
+  @include text(offState, .6rem, 600, 1px);
+}
+.linkIcon {
+  @include noDrag();
+  @include text(primaryBlue, 1rem, 600, 1px);
+  cursor: pointer;
+}
+
+.centerBox{
+  width:calc(100% - 200px);
+  height:100%;
+  background-color:rgba(36, 36, 36,.6)
+}
+
+
+//Layout
+:root {
+  --gutter-width: 1rem;
+  --outer-margin: 2rem;
+  --gutter-compensation: calc((var(--gutter-width) * 0.5) * -1);
+  --half-gutter-width: calc((var(--gutter-width) * 0.5));
+  --min: 30;
+  --sm-min: 48;
+  --md-min: 64;
+  --lg-min: 75;
+  --screen-min: var(--min)em;
+  --screen-sm-min: var(--sm-min)em;
+  --screen-md-min: var(--md-min)em;
+  --screen-lg-min: var(--lg-min)em;
+  --container-sm: calc(var(--sm-min) + var(--gutter-width));
+  --container-md: calc(var(--md-min) + var(--gutter-width));
+  --container-lg: calc(var(--lg-min) + var(--gutter-width));
+}
+
+.col-xs,
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+  height:100%;
+  box-sizing: border-box;
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.col-xs {
+  background: 0 0!important;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-xs-1 {
+  -ms-flex-preferred-size: 8.333%;
+  flex-basis: 8.333%;
+  max-width: 8.333%;
+}
+
+.col-xs-2 {
+  -ms-flex-preferred-size: 16.667%;
+  flex-basis: 16.667%;
+  max-width: 16.667%;
+}
+
+.col-xs-3 {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-xs-4 {
+  -ms-flex-preferred-size: 33.333%;
+  flex-basis: 33.333%;
+  max-width: 33.333%;
+}
+
+.col-xs-5 {
+  -ms-flex-preferred-size: 41.667%;
+  flex-basis: 41.667%;
+  max-width: 41.667%;
+}
+
+.col-xs-6 {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.col-xs-7 {
+  -ms-flex-preferred-size: 58.333%;
+  flex-basis: 58.333%;
+  max-width: 58.333%;
+}
+
+.col-xs-8 {
+  -ms-flex-preferred-size: 66.667%;
+  flex-basis: 66.667%;
+  max-width: 66.667%;
+}
+
+.col-xs-9 {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.col-xs-10 {
+  -ms-flex-preferred-size: 83.333%;
+  flex-basis: 83.333%;
+  max-width: 83.333%;
+}
+
+.col-xs-11 {
+  -ms-flex-preferred-size: 91.667%;
+  flex-basis: 91.667%;
+  max-width: 91.667%;
+}
+
+.col-xs-12 {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.col-xs-matchlist {
+  flex-basis: 74.2%;
+  max-width: 74.2%;
+}
+
+.start {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.center {
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.end {
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  text-align: end;
+}
+
+.top {
+  -webkit-box-align: start;
+  align-items: flex-start;
+}
+
+.middle {
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.bottom {
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.between {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.first {
+  -webkit-box-ordinal-group: 0;
+  order: -1;
+}
+
+.last {
+  -webkit-box-ordinal-group: 2;
+  order: 1;
+}
+
+//Helper Classes
+.vcenter {
+  display:flex;
+  align-items:center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  @include row;
+}
+
+.full{
+  @include drag();
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  height:100%;
+  width:100%;
+  background-color:color(darkBG);
+  border:1px solid color(lightGrey);
+  border-radius:5px;
+}
+
+.header{
+  background-color:color(medGrey);
+  height:120px;
+  width:100%;
+}
+
+.wholeContainer {
+  box-sizing: border-box;
+  padding:1rem;
+  height:100%;
+  width:100%;
+}
+
+.mainContent {
+  box-sizing: border-box;
+  height:100%;
+  width:95.5%;
+  flex-basis: 95.5%;
+  max-width:95.5%
+}
+
+.gutter {
+  margin-left:10px;
+}
+
+.toolbar {
+  border-radius:5px 0 px 0px 5px;
+  width:4.5%;
+  height:100%;
+}
+
+.aboveMatchSection{
+  @include text(whiteText, .7rem, 400, 1px);
+  box-sizing: border-box;
+  -webkit-app-region: no-drag;
+  background-color:color(medGrey);
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid color(lightGrey);
+  border-radius: 3px;
+  margin-bottom:5px;
+  flex-basis: 100%;
+  width:100%;
+  height:150px;
+  flex: 0 0 auto;
+}
+
+.newMatchObject{
+  @include text(whiteText, .7rem, 400, 1px);
+  box-sizing: border-box;
+  -webkit-app-region: no-drag;
+  background-color:color(medGrey);
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid color(lightGrey);
+  border-radius: 3px;
+  margin-bottom:5px;
+  flex-basis: 100%;
+  width:100%;
+  height:100px;
+  flex: 0 0 auto;
+}
+
+.matchObjectContainer{
+  box-sizing: border-box;
+  background-color:color(redClose);
+  height:100%;
+  width:100%;
+}

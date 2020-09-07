@@ -1,0 +1,181 @@
+
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 1.9rem;
+}
+
+.hand {
+	cursor: pointer;
+}
+
+main {
+	height: 100%;
+	background-color: #202231;
+	padding-top:10px;
+}
+
+a.navbar-brand {
+    position: relative;
+    z-index: 3333;
+}
+
+.container-fluid {
+	background-color: #202231;
+}
+
+#topbar {
+	border-radius: 5px 5px 0 0;
+	-webkit-app-region: drag;
+	border-left: 1px solid #313341;
+	border-right: 1px solid #313341;
+	border-top: 1px solid #313341;
+}
+
+.navbar-nav {
+	-webkit-app-region: no-drag;
+}
+
+#matchlist-container {
+	margin-bottom:10px;
+	-webkit-app-region: no-drag;
+}
+
+#matchlist-container .card {
+	margin-bottom: 5px;
+}
+
+.mr-atlas {
+	margin-right: 2px;
+}
+
+.lsp {
+	letter-spacing: 1px;
+}
+
+.lsp-2 {
+	letter-spacing: 2px;
+}
+
+.matchbuttons .btn {
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+
+.hostbuttons .btn {
+	font-weight: 800;
+	letter-spacing: 2px;	
+}
+
+.matchhead {
+	color: #E1E1E1;
+	font-size: 0.75rem;
+    font-weight: 400;
+    font-family: "SF Display";
+    text-align:left !important;
+
+}
+
+.matchhead a {
+	color: #E1E1E1;
+}
+
+.matchtitle {
+	font-weight: 600;
+}
+
+
+.clock-badge, .team-badge {
+
+}
+
+.clock-badge {
+
+}
+
+.team-badge {
+	color:#fff;
+}
+
+#enableCapture.btn-link {
+	color: #E1E1E1;
+}
+
+#enableCapture.btn-link.capture-enabled {
+	color: #4741eb;
+}
+
+.list-group-item {
+	height: 30px; padding: 4px 15px 0px 15px !important;
+}
+
+#hostpanel {
+	border: 1px solid #313341;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.15);
+
+}
+
+.match-details {
+	padding: 0.5rem;
+}
+
+.player-list .list-group-item:last-child {
+	padding-bottom:0px !important;
+}
+
+.player-list {
+	padding-bottom:0px !important;
+}
+
+.match-setting-block {
+	border-bottom: 1px solid #555666;
+	height:50px;
+}
+
+.match-setting-block:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.match-setting-block .d-inline-block {
+	vertical-align: middle;
+}
+
+.match-setting-block .d-inline-block .fal {
+	padding-top:10px;
+}
+
+#editwhitelist.btn {
+	padding:0px !important;
+}
+
+#editwhitelist.btn.btn-link {
+	color: #E1E1E1;
+}
+
+#settingsWhitelist {
+	min-height:340px;
+}
+
+#partysizegroup {
+	padding-top: 10px;
+}
+
+footer {
+	-webkit-app-region: no-drag;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+.noDrag {
+  -webkit-app-region: no-drag;
+}
+
+.badge {
+	font-size: 100%;
+}

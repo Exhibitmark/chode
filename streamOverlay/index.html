@@ -1,0 +1,110 @@
+<html>
+<head>
+  <title>Explorer</title>
+  <script>window.$ = window.jQuery = require('./jquery.js');</script>
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="css/industry-font.css"/>
+  <script src="app.js"></script>
+</head>
+<body style="overflow:hidden" class="bodyNoMargin">
+<div class="col-xs-12">
+
+  <div class="col-xs-12 statDisplayCont">
+    <div id="newGoal" style="padding-left:55px;background-color:#262f3a;" class="newGoal vcenter">
+      <div style="height:auto;margin:20px;" class="col-xs-6">
+        <ul style="margin-top:-5px;cursor:pointer;" id='scoreAmount' class="goalType">3-POINTER</ul>
+        <ul style="margin-top:-15px;cursor:pointer;"id='scorer' class="goalAlertText">SOMUCHFORSUBTLETY</ul>
+        <div style="height:2px;background-color:#FFBB00;" class="col-xs-7"></div>
+        <ul id='scoreTeam' class="goalTeam">ELEVEN POINT FIVE</ul>
+      </div>
+      <div style="height:50%;width:100%" class="col-xs-6 row">
+        <div style="padding:0px 20px 0px 20px" class="col-xs-6">
+          <ul id='assistedBy' class="goalStatTitle">ASSISTED BY</ul>
+          <ul id='scoreAssist' class="goalStats">SOMUCHFORSUBTLETY</ul>
+        </div>
+        <div style="padding:0px 20px 0px 20px" class="col-xs-3">
+          <ul id='shotSpeed' class="goalStatTitle">SHOT SPEED</ul>
+          <ul id='scoreSpeed' class="goalStats">16m/s</ul>
+        </div>
+        <div style="padding:0px 20px 0px 20px" class="col-xs-3">
+          <ul id='shotDistance' class="goalStatTitle">SHOT DISTANCE</ul>
+          <ul id='scoreDistance' class="goalStats">1.0m</ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="statsBoard" style="display:none;margin-top: 100px;height:300px" class="col-xs-12 center row">
+      <div style="background-color:#232930;border-radius:5px;border: 1px solid #394048;" class="col-xs-4 vcenter center">
+      <div id="oStats" style="height:auto;background-color:#232930;font-size:1rem;" class="col-xs-3 end goalStats">
+          <ul id='orangeTeamName' style="font-size:1.2rem;color: #ecab05;" class="ulSpacer">Orange</ul>
+          <ul id='orangePoints' class="ulSpacer"></ul>
+          <ul id='orangePossession' class="ulSpacer"></ul>
+          <ul id='orangeInterceptions' class="ulSpacer"></ul>
+          <ul id='orangeSaves' class="ulSpacer"></ul>
+          <ul id='orangeAssists' class="ulSpacer"></ul>
+          <ul id='orangeShots' class="ulSpacer"></ul>
+      </div>
+      <div style="height:auto;background-color:#232930;font-size:1rem;font-weight:800;color:#E5E5E5" class="col-xs-6 center goalStatTitle">
+        <ul style="height:20px" class="ulSpacer"></ul>
+        <ul style="" class="ulSpacer">POINTS</ul>
+        <ul style="" class="ulSpacer">POSSESSION TIME</ul>
+        <ul style="" class="ulSpacer">INTERCEPTIONS</ul>
+        <ul style="" class="ulSpacer">SAVES</ul>
+        <ul style="" class="ulSpacer">ASSISTS</ul>
+        <ul style="" class="ulSpacer">SHOTS on goal</ul>
+      </div>
+      <div id="bStats"style="height:auto;background-color:#232930;font-size:1rem" class="col-xs-3 start goalStats">
+        <ul id='blueTeamName' style="font-size:1.2rem;color:#3366ff" class="ulSpacer">Blue</ul>
+        <ul id='bluePoints' class="ulSpacer"></ul>
+        <ul id='bluePossession' class="ulSpacer"></ul>
+        <ul id='blueInterceptions' class="ulSpacer"></ul>
+        <ul id='blueSaves' class="ulSpacer"></ul>
+        <ul id='blueAssists' class="ulSpacer"></ul>
+        <ul id='blueShots' class="ulSpacer"></ul>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!--ADD PLAYERS LIST HERE-->
+
+  <div id="scoreboard" style="height:50px" class="col-xs-12 row">
+    <div class="col-xs-5"></div>
+    <div id="clock" style="height:40px;margin-top:10px;" class="col-xs-2 trapezoid drag center vcenter">
+        <span id="time" style="margin-top:40px" class="time">00:00:00</span>
+    </div>
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3"></div>
+    <div id="teamContainer" style="width:100%;height:50px" class="col-xs-6 center row vcenter">
+      <div id="oContainer" style="padding-left:20px;background-color:#d6d6d6;height:100%;width:100%;transform: translate(10px) skewX(20deg)" class="col-xs-4 vcenter">
+        <span style="transform: skewX(-20deg);color: #ecab05;" id="orangeTeam" class="team">Orange</span>
+      </div>
+
+      <div id="scoreContainer" style="background-color:#d6d6d6;height:100%;width:100%;" class="col-xs-4 row center vcenter">
+        <div class="col-xs-3 vcenter row center">
+          <span id="orangeScore" class="score">10</span>
+        </div>
+        <div style="width:100%;margin-top:3px;" class="col-xs-5 row vcenter center">
+          <span style="cursor:pointer;font-size:.8rem;font-weight:600; letter-spacing: 1px;color: #292929;margin-left: -15px;" id="round" class="time">ROUND 1 OF 2</span>
+        </div>
+        <div class="col-xs-3 vcenter row center">
+          <span id="blueScore" class="score">2</span>
+        </div>
+      </div>
+      <div id="bContainer" style="padding-right:20px;background-color:#d6d6d6;height:100%;width:100%;transform: translate(-10px) skewX(-20deg)" class="col-xs-4 row end vcenter">
+        <span style="transform: skewX(20deg);color:#3366ff" id="blueTeam" class="team">Blue</span>
+      </div>
+    </div>
+    <div class="col-xs-3"></div>
+    <div style="height:0px" class="col-xs-3"></div>
+    <div class="col-xs-6 row" style="width:100%;height:12px;margin-top:-5px">
+      <div id="oPossess" style="height:7px;width:100%;background-color:#222222;margin-top:5px;transform: translate(21px) skewX(20deg);border-radius:0px 0px 0px 5px" class="col-xs-3 row possession"></div>
+      <div style="height:7px;width:48.8%;background-color:#d6d6d6;margin-top:5px" class="col-xs-6 row"></div>
+      <div id="bPossess" style="height:7px;width:100%;background-color:#222222;margin-top:5px;transform: translate(-6px) skewX(-20deg);border-radius:0px 0px 5px 0px" class="col-xs-3 row possession"></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

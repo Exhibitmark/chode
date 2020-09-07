@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>ATLAS Setup</title>
+  <script>window.$ = window.jQuery = require('./jquery.js');</script>
+  <link rel="stylesheet" type="text/css" href="css/fontawesome.css"/>
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="css/all.css"/> 
+  <script src="atlasSetup.js"></script>
+</head>
+<body>
+<div class="full">
+  <div style="padding: 10px 10px 10px 20px" class="col-xs-12 vcenter end">
+    <i style="margin-top:-10px" id="minimize" class="far fa-window-minimize icon noDrag"></i>
+    <i id="close" class="far fa-times icon noDrag"></i>
+  </div>
+
+  <div style="height:50px;"class="col-xs-12"></div>
+  <div style="font-size:2rem;letter-spacing:5px;padding:5px 20px 5px 20px" class="title">ATLAS SETUP</div>
+
+  <div style="padding:40px 20px 20px" class="row">
+    <div class="disabledLinkText">STEP 1. SET ECHOVR.EXE PATH</div>
+    <div class="col-xs-10">
+      <div class="inputBox dirInputBox vcenter" style="height:20px">
+        <input id="appInput" class="directoryInput" style="background:transparent; width:100%" placeholder="ex.C:\Program Files\Oculus Apps\Software\ready-at-dawn-echo-arena\bin\win7" type="text"/>
+      </div>
+    </div>
+    <div class="col-xs-2 end vcenter">
+      <button id="setDir" class="button-set">SET</button>
+    </div>
+  </div>
+
+  <div style="padding:0px 20px 20px">
+    <div class="disabledLinkText">STEP 2. GET USERNAME</div>
+    <button style="width:100%" id="setUser" class="button-set">GET USERNAME</button>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,856 @@
+@import 'https://sf.abarba.me/font.css';
+
+$colors: (
+    darkBG:#202231,
+    medGrey:#242739,
+    lightGrey:#313341,
+    offState:#555666,
+    whiteText:#E1E1E1,
+    primaryBlue:#4741EB,
+    redClose:#FF4864,
+    yellowMinimize:#FFBB00,
+    statusGreen:#51cf66
+);
+
+//Functions
+@function color($color-name) {
+	@return map-get($colors, $color-name);
+}
+
+@function icons($name) {
+	@return map-get($icons, $name);
+}
+
+//Modifiers / Helpers
+@mixin pull-right{
+	float: right !important;
+} 
+
+@mixin pull-left{
+	float: left !important;
+}  
+
+//Mix-ins
+
+@mixin icon($color, $fontSize) {
+	outline-color: transparent;
+	color: color($color);
+	font-size: $fontSize;
+  cursor: pointer !important;
+  -webkit-app-region: no-drag;
+}
+
+@mixin text($color, $fontSize, $weight, $kern) {
+	color: color($color);
+	font-size: $fontSize;
+	font-weight: $weight;
+	letter-spacing: $kern;
+}
+
+@mixin font-style($weight, $size, $kerning, $color) {
+  font-family: 'SF Display', sans-serif;
+  font-size: $size;
+  font-weight: weight($weight);
+  letter-spacing: $kerning;
+  color: color($color);
+}
+
+@mixin button($color, $width, $height, $fontSize) {
+	background-color: color($color);
+	width: $width;
+	height: $height;
+  font-size: $fontSize;
+	font-weight:800;
+  letter-spacing:2px;
+  border-color: transparent;
+	justify-content: center;
+  text-align: center;
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+}
+
+@mixin listItem($color, $width, $height) {
+	background-color: color($color);
+	width: $width;
+	height: $height;
+}
+
+@mixin circle($color, $width, $height) {
+	background-color: color($color);
+  border-radius:10px;
+	width: $width;
+	height: $height;
+	justify-content: center;
+  -webkit-app-region: no-drag;
+}
+
+@mixin box {
+	box-sizing: border-box;
+	min-height: 1rem;
+  -webkit-app-region: drag;
+	overflow: hidden;
+}
+
+@mixin boxContainer($padding) {
+  @include box;
+  overflow:hidden;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+	box-sizing: border-box;
+	width: 100%;
+	padding: $padding;
+}
+
+@mixin match() {
+  @include box;
+  background-color:color(medGrey);
+  border:1px solid color(lightGrey);
+  border-radius:5px;
+  min-height:60px;
+	box-sizing: border-box;
+  width:100%;
+  padding:10px;
+  padding-top:13px;
+  margin:0px 10px 0px 10px;
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
+}
+@mixin matchlist(){
+  display:flex;
+  -webkit-app-region: no-drag;
+  overflow-y:scroll;
+  box-sizing: border-box;
+  flex-direction: column;
+  margin-top:5px;
+  -webkit-box-flex: 0;
+	flex: 0 0 auto;
+  flex-basis: 100%;
+	max-width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: all .5s ease-out;
+}
+
+@mixin row(){
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin rule() {
+  padding-top:10px;
+  padding-bottom:10px;
+  border-bottom: 1px solid color(offState);
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+  height: 100%; 
+  font-family: 'SF Display', sans-serif;
+}
+
+html {
+	width:500px;
+	height:680px;
+	background: 0 0!important;
+	overflow: hidden;
+	-webkit-app-region: drag;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  border-radius: 5px 5px 0 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+	background: none !important;
+	-webkit-app-region: no-drag;
+}
+
+.matchlist{
+  @include matchlist();
+  height:88%;
+  transition: all .5s ease-out;
+}
+
+.matchObject {
+  @include text(whiteText, .7rem, 400, 1px);
+  -webkit-app-region: no-drag;
+  background-color:color(medGrey);
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid color(lightGrey);
+  border-radius: 5px;
+  margin-bottom:5px;
+  padding:15px 10px 15px 10px;
+}
+
+.hostPanelBefore {
+  @include boxContainer(0rem);
+  border: 1px solid color(lightGrey);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.15);
+  background-color:color(medGrey);
+  height:100%;
+  overflow:hidden;
+}
+
+//Misc Objects
+.socket{
+  @include circle(yellowMinimize, 10px, 10px);
+  margin-top:-2px;
+}
+
+//Text Styles
+.title{
+	@include text(whiteText, .65rem, 400, 1px);
+}
+
+.titleIcon{
+  @include text(whiteText, .6rem, 600, 1px);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+	margin: 0px 2px 2px 10px;
+}
+
+.subText {
+  @include text(whiteText, .6rem, 400, 2px);
+  margin-top:2px;
+}
+
+.menuText {
+  @include text(whiteText, .6rem, 400, 2px);
+}
+
+.linkText {
+  @include text(primaryBlue, .6rem, 600, 1px);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.disabledLinkText {
+  @include text(offState, .6rem, 600, 1px);
+  -webkit-app-region: no-drag;
+}
+.linkIcon {
+  @include text(primaryBlue, 1rem, 600, 1px);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.errorText {
+  @include text(whiteText, .6rem, 400, 1px);
+  -webkit-app-region: no-drag;
+}
+
+//Buttons
+.button-add {
+  @include button(primaryBlue, 100%, 40px, .65rem);
+  @include text(whiteText, .65rem, 500, 3px);
+  width:calc(100% - 1px);
+	border-radius:5px 0px 0px 5px;
+}
+
+.button-left {
+	@include button(primaryBlue, auto, 30px, .65rem);
+  @include text(whiteText, .65rem, 500, 2px);
+  margin-right:1px;
+  padding-left:10px;
+  padding-right:10px;
+	border-radius:3px 0px 0px 3px;
+}
+.button-join-off {
+	@include button(offState, auto, 30px, .65rem);
+  @include text(whiteText, .65rem, 500, 2px);
+  color:rgba(187, 187, 187, 0.15);
+  margin-right:1px;
+  padding-left:10px;
+  padding-right:10px;
+  border-radius:3px;
+  cursor: not-allowed;
+}
+
+.join-icon {
+	@include button(primaryBlue, 30px, 30px, .65rem);
+  @include text(whiteText, .65rem, 500, 3px);
+	border-radius:0px 3px 3px 0px;
+}
+
+.button-remove {
+	@include button(primaryBlue, 30px, 30px, .65rem);
+  @include text(whiteText, .65rem, 400, 1px);
+  margin-top:3px;
+	padding:0px;
+	border-radius:2px 0px 0px 2px;
+}
+
+.button-set {
+  @include button(primaryBlue, 60px, 30px, .65rem);
+  @include text(whiteText, .65rem, 500, 2px);
+	padding:0px;
+	border-radius:3px;
+}
+
+.button-drop {
+	@include button(primaryBlue, 25px, 30px, .65rem);
+	@include text(whiteText, .65rem, 400, 2px);
+  padding:0px;
+  margin-top:3px;
+	margin-left: 1px;
+	border-radius:0px 2px 2px 0px;
+}
+
+.button-icon {
+  @include button(primaryBlue, 100%, 100%, .65rem);
+  @include text(whiteText, .6rem, 600, 1px);
+	border-radius:0px 5px 5px 0px;
+}
+
+.button-circle {
+  @include pull-right;
+  font-size:1em;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  margin-top:5px;
+  text-align: center;
+  width: 20px;
+  height:20px;
+  color:color(primaryBlue);
+  border: 2px solid color(primaryBlue);
+  border-radius: 50%;
+}
+
+.remove{
+  
+}
+
+
+//Checkbox
+.toggleNew {
+  @include pull-right;
+  font-size:1em;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  margin-left: 2px;
+  width: 17px;
+  height:17px;
+  padding: 5px;
+  color:color(offState);
+  border: 2px solid color(offState);
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+input[type="checkbox"] {
+  position: absolute !important;
+  opacity:0;
+  overflow: hidden;
+
+  &:checked + label {
+    .toggleNew {
+      color:color(primaryBlue);
+      border-color: color(primaryBlue);
+      border-width:0.125rem;
+    }
+  }
+}
+
+//Toggle Group
+.radio-label {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.radio-pillbox {
+  @include row;
+  height: 30px;
+  width: 120px;
+  font-size: .7rem;
+  font-weight: 400;
+  border: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  color: color(offState);
+  border-color: color(offState);
+  background-color:transparent;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.radio-pillbox radiogroup {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  background-color:transparent;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.radio-pillbox radiogroup div {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  background-color:transparent;
+  width: 100%;
+  position: relative;
+}
+
+.radio-pillbox radiogroup div input {
+  background-color:transparent;
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  -webkit-appearance: inherit;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  outline: 0;
+  border-left: 2px solid color(offState);
+  transition: all .15s ease-in-out;
+}
+
+.radio-pillbox radiogroup div input:checked {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  color:color(whiteText);
+  background-color: color(primaryBlue);
+  border: none;
+  transition: all .15s ease-in-out;
+}
+
+.radio-pillbox radiogroup .first {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  border-radius: 5px 0 0 5px;
+  border-left: none;
+  transition: all .15s ease-in-out;
+}
+
+.radio-pillbox radiogroup .last {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.radio-pillbox radiogroup div label {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  color:color(whiteText);
+  position: absolute;
+  top: 50%; /* top plus line-height centers text */
+  line-height: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: all .15s ease-in-out;
+}
+
+.radio-pillbox input:focus {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  outline: 0;
+  transition: all .15s ease-in-out;
+}
+
+.radio-pillbox label:after {
+  -webkit-app-region: no-drag;
+	cursor: pointer;
+  display: inline-block;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: all .15s ease-in-out;
+}
+
+.radio-pillbox input:checked + label:after {
+  -webkit-app-region: no-drag;
+  color:color(whiteText);
+	cursor: pointer;
+  margin-left: 12px;
+  -webkit-transform: scale(1.25);
+  transform: scale(1);
+  transition: all .15s ease-in-out;
+}
+
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.close {
+  @include circle(redClose, 11px, 11px);
+  @include text(whiteText, .55rem, 800, 0px);
+  margin-left:10px;
+  cursor:pointer;
+}
+
+.icon {
+  @include text(whiteText, .8rem, 800, 0px);
+  vertical-align: middle;
+  padding-left:10px;
+  cursor:pointer;
+}
+
+//Match Object
+.matchContainer{
+	@include listItem(redClose, 100%, 60px);
+	@include text(whiteText, .65rem, 600, 2px);
+	-webkit-app-region: no-drag;
+  display: block;
+	border-width:.5px;
+  border-style:none;
+  border-bottom-style: solid;
+  border-color: #383b4c;
+}
+.inputBox{
+  border: 1px solid color(lightGrey);
+  border-radius: 2px;
+  height:30px;
+  margin:0px 0px 10px 0px;
+  padding: 8px 10px 8px 10px;
+  overflow:visible;
+}
+
+//Input
+input[type="text"] {
+  @include text(whiteText, .6rem, 400, 1px);
+  border: 0px solid color(lightGrey);
+  -webkit-app-region: no-drag;
+  width: 90%;
+  height:30px;
+  overflow-x:scroll;
+}
+
+input.add[type="text"] {
+  margin-top:-10px;
+  color: color(whiteText);
+  min-width: 100%;
+  letter-spacing: 1px;
+  padding: 10px 10px 8px 10px;
+  font-size: .7rem;
+  border: 0px solid transparent;
+  border-bottom: .5px solid #383b4c;
+  border-radius: 0px;
+}
+
+//Layout
+:root {
+  --gutter-width: 1rem;
+  --outer-margin: 2rem;
+  --gutter-compensation: calc((var(--gutter-width) * 0.5) * -1);
+  --half-gutter-width: calc((var(--gutter-width) * 0.5));
+  --min: 30;
+  --sm-min: 48;
+  --md-min: 64;
+  --lg-min: 75;
+  --screen-min: var(--min)em;
+  --screen-sm-min: var(--sm-min)em;
+  --screen-md-min: var(--md-min)em;
+  --screen-lg-min: var(--lg-min)em;
+  --container-sm: calc(var(--sm-min) + var(--gutter-width));
+  --container-md: calc(var(--md-min) + var(--gutter-width));
+  --container-lg: calc(var(--lg-min) + var(--gutter-width));
+}
+
+.row {
+  @include row
+}
+
+.col-xs,
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+  box-sizing: border-box;
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.col-xs {
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-xs-1 {
+  -ms-flex-preferred-size: 8.333%;
+  flex-basis: 8.333%;
+  max-width: 8.333%;
+}
+
+.col-xs-2 {
+  -ms-flex-preferred-size: 16.667%;
+  flex-basis: 16.667%;
+  max-width: 16.667%;
+}
+
+.col-xs-3 {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-xs-4 {
+  -ms-flex-preferred-size: 33.333%;
+  flex-basis: 33.333%;
+  max-width: 33.333%;
+}
+
+.col-xs-5 {
+  -ms-flex-preferred-size: 41.667%;
+  flex-basis: 41.667%;
+  max-width: 41.667%;
+}
+
+.col-xs-6 {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.col-xs-7 {
+  -ms-flex-preferred-size: 58.333%;
+  flex-basis: 58.333%;
+  max-width: 58.333%;
+}
+
+.col-xs-8 {
+  -ms-flex-preferred-size: 66.667%;
+  flex-basis: 66.667%;
+  max-width: 66.667%;
+}
+
+.col-xs-9 {
+  -ms-flex-preferred-size: 75%;
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.col-xs-10 {
+  -ms-flex-preferred-size: 83.333%;
+  flex-basis: 83.333%;
+  max-width: 83.333%;
+}
+
+.col-xs-11 {
+  -ms-flex-preferred-size: 91.667%;
+  flex-basis: 91.667%;
+  max-width: 91.667%;
+}
+
+.col-xs-12 {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.start {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.center {
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.end {
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  text-align: end;
+}
+
+.top {
+  -webkit-box-align: start;
+  align-items: flex-start;
+}
+
+.middle {
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.bottom {
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.between {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.first {
+  -webkit-box-ordinal-group: 0;
+  order: -1;
+}
+
+.last {
+  -webkit-box-ordinal-group: 2;
+  order: 1;
+}
+
+.box-inner {
+  @include box;
+  overflow-y:scroll;
+  -webkit-app-region: no-drag;
+  padding:.75rem;
+  width:100%;
+  height:100%;
+  transition: all .2s ease-in;
+}
+
+.containerTop {
+  @include boxContainer(.75rem);
+  border-radius: 5px 5px 0 0;
+  background-color:color(darkBG);
+  transition: max-height .2s ease-in;
+}
+
+.privacyInner{
+  @include text(whiteText, .7rem, 800, 2px);
+  position:flex;
+  font-weight:800;
+  width: 100%;
+  height: 100%;
+  margin:20px;
+}
+
+.directoryBefore {
+  @include boxContainer(0rem);
+  min-height:0%;
+  max-height:0%;
+  transition: all .2s ease-in;
+}
+
+.directoryAfter {
+  @include boxContainer(.75rem);
+  padding-top:0px;
+  min-height:11%;
+  max-height:12%;
+  transition: all .2s ease-in;
+}
+
+.full{
+  border: 1px solid color(lightGrey);
+	border-radius: 5px 5px 0 0;
+	background-color: color(darkBG);
+  height:100%;
+}
+
+.inputError{
+  border-color: color(redClose);
+  color:color(redClose);
+}
+
+.menuItem {
+  @include row;
+  @include rule;
+  width:100%;
+}
+
+.whitelistItem{
+  @include text(whiteText, .7rem, 400, 1px);
+  height:34px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+//Helper Classes
+.vcenter {
+  display:flex;
+  align-items:center;
+}
+
+.hcenter {
+  justify-content: center;
+}
+
+.justend{
+  justify-content:flex-end;
+  text-align:-webkit-right;
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+
+.yellow{
+  color:color(offState);
+  margin-top:-10px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+.red{
+  color:color(offState);
+  margin-left:10px;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+.error {
+  background-color:color(offState);
+  color:color(redClose);
+  cursor:pointer;
+  overflow:hidden;
+  position: fixed;
+  top:0;
+  z-index:999;
+  width:100%;
+  max-height:0px;
+  border-radius:5px 5px 0px 0px;
+  -webkit-app-region: no-drag;
+  box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.0);
+  transition: all .4s ease-in-out;
+}
+
+.clickable{
+  cursor:pointer;
+  -webkit-app-region: no-drag;
+}
+
+.animated {
+  transition: all .4s ease-in-out;
+}
+
+.drag{
+  -webkit-app-region: drag;
+}
+
+.noDrag{
+  -webkit-app-region: no-drag;
+}

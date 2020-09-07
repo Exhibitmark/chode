@@ -1,0 +1,157 @@
+<html>
+<head>
+  <title>ATLAS</title>
+  <meta charset="UTF-8">
+  <script>window.$ = window.jQuery = require('./jquery.js');</script>
+
+  <link href="css/atlasbootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/atlastagify.css"> 
+  <script src="https://kit.fontawesome.com/2ec2fa3d3a.js" crossorigin="anonymous"></script>
+  <link href="css/atlascustom.css" rel="stylesheet">
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/clipboard.min.js"></script>
+  <script src="tagify.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <nav  id="topbar" class="navbar navbar-expand navbar-dark fixed-top bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" id="refresh" href="#refresh" data-toggle="tooltip" data-placement="bottom" title="Refresh the List of Matches"><i id="refreshicon" class="fas fa-sync-alt"></i></a>
+      </li>
+    </ul>
+
+    <a class="navbar-brand noDrag" href="https://echovrconnect.com/" target="_blank">ATLAS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto" style="padding-top:0.04rem;">
+        <li class="nav-item">
+          <a class="nav-link text-primary" id="game" href="#launch" data-toggle="tooltip" data-placement="bottom" title="Start EchoVR">LAUNCH ECHO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="collapse" href="#setup-settings" role="button" aria-expanded="false" aria-controls="setup-settings">
+
+            <i class="fas fa-cog" style="margin-top:2px;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#checkversion" id="version"></a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav mr-right">
+        <li class="nav-item">
+          <a class="nav-link disabled" id="minimize" href="#minimize">
+            <i class="far fa-window-minimize fa-lg" style="margin-top:-2px;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" id="close" href="#close"><i class="far fa-times fa-lg"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SETUP SETTINGS -->
+  <div class="container-fluid">
+    <div class="collapse" id="setup-settings">
+      <div class="d-block w-100 px-2 pt-2">
+        <div class="input-group input-group-lg mb-3">
+          <input type="text" class="form-control" id="directoryInput" placeholder="Enter Echo Directory" aria-label="Recipient's username" aria-describedby="button-addon2" value="">
+          <div class="input-group-append">
+            <button class="btn btn-primary btn-lg hand" type="button"  id="setDir" data-toggle="tooltip" data-placement="bottom" title="Set the directory of echovr.exe">SET</button>
+          </div>
+          <div class="invalid-feedback" id="setDir-feedback">
+          </div>
+        </div>
+      </div>
+
+      <div class="d-block w-100 pb-3">
+        <div class="d-inline-block">
+          <button class="btn btn-link btn-lg hand" id="enableCapture" data-state="0">ENABLE CAPTURE VP2</button>
+        </div>
+        <div class="d-inline-block">
+          <button class="btn btn-primary hand" id="pubjoin">AUTO-JOIN PUB</button>
+        </div>
+
+
+        <div class="d-inline-block float-right">
+          <button type="button" class="btn btn-link btn-lg text-white">Logged in as <span id="useridsection">none</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main role="main" class="container-fluid">
+    <div  class="row" id="maincontainer">
+      <div id="noMatches" class="col-12">
+        <p class="text-center">NO MATCHES AVAILABLE</p>
+      </div>
+      <div class="col-12">
+        <div class="accordion" id="matchlist-container">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- HOST MATCH  -->
+  <footer class="container-fluid fixed-bottom bg-lessdark px-2" id="hostpanel">
+
+    <!-- HOST SETTINGS PANEL -->
+    <div id="settingsMain" class="collapse px-2 py-3" data-parent="#hostpanel">
+      <div class="d-block w-100">
+        <div class="d-inline-block ">MATCH SETTINGS</div>
+        <button type="button" id="editWhitelist" class="float-right btn btn-link" data-toggle="collapse" href="#settingsWhitelist" role="button" aria-expanded="false" aria-controls="settingsWhitelist"><span class="whitelistref">EDIT WHITELIST</span></button>
+      </div>
+
+      <div class="d-block w-100 match-setting-block">
+        <div class="d-inline-block" data-toggle="tooltip" data-placement="right" title="Locking the party means only atlas users in the whitelist or users with the matchid will be able to see the match on atlas">LOCK PARTY</div>
+        <div class="d-inline-block float-right"><div class="whitelistref" id="isPrivate" data-private="0"><i class="fal fa-3x fa-check-circle"></i></div></div>
+      </div>
+
+
+      <div class="d-block w-100 match-setting-block">
+        <div class="d-inline-block" data-toggle="tooltip" data-placement="right" title="This will post your match on the echo discord">LFG</div>
+        <div class="d-inline-block float-right"><div class="lfgref" id="isLFG" data-lfg="0"><i class="fal fa-3x fa-check-circle"></i></div></div>
+      </div>
+
+      <div class="d-block w-100 match-setting-block ">
+        <div class="d-inline-block mr-3">
+          <span class="align-middle">LOBBY NAME</span>
+        </div>
+        <div class="d-inline-block w-75">
+          <input type="text" class="form-control " name="lobbyname" id="lobbyname" value="Default Lobby Name" placeholder="Lobby Name">
+        </div>
+      </div>
+    </div>
+
+    <!-- EDIT WHITELIST -->
+    <div id="settingsWhitelist" class="collapse px-2 py-3" data-parent="#hostpanel">
+      <div class="d-block w-100">
+        <button type="button" id="backtoWhiteList" class="btn btn-link" role="button" data-toggle="collapse" href="#settingsMain" role="button" aria-expanded="false" aria-controls="settingsMain">BACK</button>  
+        <button type="button" id="cleartags" class="float-right btn btn-link" role="button">CLEAR</button>   
+      </div>
+      <div class="d-block w-100">
+        <div style="margin-top:10px" class="inputBox">
+          <input id="whitelist" name='whitelist' class="inputAdd tagify--outside" placeholder="Add Player" type="text"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOST MATCH BUTTON -->
+    <div class="d-block w-100 py-2">
+      <div class="btn-group w-100 hostbuttons" role="group" aria-label="Basic example">
+        <button type="button" id="host" class="btn btn-primary hand mr-atlas btn-lg col-11" data-toggle="tooltip" data-placement="top" title="Host/Update Match on Atlas">HOST MATCH</button>
+        <button type="button" class="btn btn-primary btn-lg col-1 hand text-center" data-toggle="collapse" href="#settingsMain" role="button" aria-expanded="false" aria-controls="settingsMain"><i class="fas fa-cog"></i></button>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

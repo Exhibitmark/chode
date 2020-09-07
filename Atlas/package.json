@@ -1,0 +1,29 @@
+{
+  "name": "ATLAS",
+  "productName": "Atlas",
+  "version": "0.5.3",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pkg": "electron-packager . ATLAS --overwrite --ignore=^/updater.exe --ignore=^/config --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.ProductName=\"ATLAS\""
+  },
+  "author": "Exhibit",
+  "license": "ISC",
+  "dependencies": {
+    "cryptr": "^4.0.2",
+    "request": "*"
+  },
+  "devDependencies": {
+    "electron": "^4.0.3"
+  },
+  "build": {
+    "appId": "ATLAS",
+    "protocols": {
+      "name": "atlas-echovrconnect",
+      "schemes": [
+        "atlas"
+      ]
+    },
+    "win": {}
+  }
+}
