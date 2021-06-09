@@ -1,0 +1,30 @@
+{
+  "defaults":{
+    "game":"halo3",
+    "version":"1.2282",
+    "mode":"midi"
+  },
+  "midi":"MPKmini2 0",
+  "keys": {
+    "39":"start", 
+    "37":"stop",
+    "97":"keyframe",
+    "110":"clear",
+    "100":"get_info",
+    "101":"reset_rotate"
+  },
+  "buttons": {
+    "44":"start",
+    "45":"stop",
+    "46":"save",
+    "55":"first",
+    "57":"last",
+    "59":"next",
+    "60":"editmode",
+    "47":"slow",
+    "48":"keyframe",
+    "49":"clear",
+    "50":"get_info",
+    "51":"reset_rotate"
+  }
+}
