@@ -1,17 +1,23 @@
 {
   "defaults":{
-    "game":"halo3",
-    "version":"1.2282",
+    "game":"echo",
     "mode":"midi"
   },
   "midi":"MPKmini2 0",
   "keys": {
-    "39":"start", 
-    "37":"stop",
-    "97":"keyframe",
-    "110":"clear",
-    "100":"get_info",
-    "101":"reset_rotate"
+    "numpad 6":"start", 
+    "numpad 7":"stop",
+    "numpad 1":"keyframe",
+    "numpad period":"clear",
+    "numpad 4":"get_info",
+    "numpad 5":"reset_rotate",
+    "add":"zoom_in",
+    "subtract":"zoom_out",
+    "up arrow":"duration_increase",
+    "down arrow":"duration_decrease",
+    "1":"first_keyframe",
+    "2":"last_keyframe",
+    "3":"next_keyframe"
   },
   "buttons": {
     "44":"start",

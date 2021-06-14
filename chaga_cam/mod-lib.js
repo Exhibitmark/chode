@@ -34,16 +34,12 @@ function getGameAddresses(){
         addresses[e] = pointerBuild(base, o[e].list)
     })
 
-    console.log(addresses['camera'].toString(16))
-    console.log(addresses['fov'].toString(16))
-
-    console.log('Stored game addresses')
+    //console.log('Stored game addresses')
 }
 
 function pointerBuild(base,n){
     for(var i = 0; i < n.length-1; i++){
         base = read.Pointer(base + parseInt(n[i],16))
-        //console.log(base.toString(16))
     }
     return base + parseInt(n[n.length-1],16)
 }

@@ -82,9 +82,7 @@ const cam_action = {
         write.Memory(addresses['camera'] - axis, val, 'float')
     },
     Get_info: function(){
-        console.log("Start Position:", data.keyframes[0])
-        console.log("All other positions:", data.keyframes[1])
-        console.log("Movement duration:", camera.duration / 1000, "seconds")
+        console.log(d)
     }
 }
 

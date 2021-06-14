@@ -1,12 +1,14 @@
 {
-  "name": "Cheddar",
+  "name": "Chaga",
   "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "author": "Mark Ex",
   "scripts": {
-    "build": "pkg midi-cam.js --targets node12-win-x64",
-    "package": "cp -r ./dependencies/taskDependents purpl-build | mv purpl.exe purpl-build | cp config.json purpl-build"
+    "build-midi": "pkg chaga.js --targets node12-win-x64",
+    "build-key": "pkg chagaKey.js --targets node12-win-x64",
+    "package-midi": "cp -r ./dependencies/taskDependents chaga-cam_build | mv chagaKey.exe chaga-cam_build | cp config.json chaga-cam_build | cp keys.json chaga-cam_build",
+    "package-key":"cp ./dependencies/taskDependents/memoryjs.node ./chaga-cam_build/taskDependents | cp ./dependencies/iohook.node chaga-cam_build | cp ./dependencies/uiohook.dll chaga-cam_build | mv ./chagaKey.exe ./chaga-cam_build/chaga-cam.exe | cp config.json chaga-cam_build | cp keys.json chaga-cam_build"
   },
   "license": "ISC",
   "dependencies": {
