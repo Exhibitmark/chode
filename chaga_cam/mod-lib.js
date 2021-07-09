@@ -32,9 +32,8 @@ function getGameAddresses(){
     let base = addresses['base']
     Object.keys(o).forEach(function(e){
         addresses[e] = pointerBuild(base, o[e].list)
-    })
-
-    //console.log('Stored game addresses')
+    });
+    
 }
 
 function pointerBuild(base,n){
