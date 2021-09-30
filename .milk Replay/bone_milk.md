@@ -12,9 +12,16 @@ Milk discards the max absolute value of that tuple while saving that values posi
 
 ```axis = {0:x, 1:y, 2:z, 3:w}```
 
+This is done because the max value is unnecessary as the value can be reconstructed when data is used by:
+
+In this example X is the max absolute value of the tuple
+
+```X = sqrt(1-y^2 + z^2 + w^2)```
+
 Remaining values are then converted to half-precision floats and stored as bytes with axis being the first value
 
 ```axis, orientation data```
+
 
 
 ### Bone Position encoding
