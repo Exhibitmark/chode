@@ -4,7 +4,7 @@ This is specific to the bone_read api and doesn't include any of the information
 ## Frame
 A frame is defined as the data returned from 1 request to the /player_bones endpoint. A Milk frame consists of each players encoded data concatenated.
 The size of any 1 frame can be calculated by:
-322 bytes * <player count>
+```322 bytes * <player count>```
 
 ### Bone Orientation encoding
 Each bones orientation is 4 consecutive values from the bone_o parameter.
